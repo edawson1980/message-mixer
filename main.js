@@ -60,6 +60,6 @@ const palindrome = function(str){
 
 const pigLatin = function(sentence, character){
   return sentence.split(' ').join(character + ' ');
-}
+};
 
 export {countCharacter,capitalizeFirstCharacterOfWords,reverseWord,reverseAllWords,replaceFirstOccurence,replaceAllOccurrences,encode,palindrome,pigLatin};
