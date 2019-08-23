@@ -62,4 +62,4 @@ const pigLatin = function(sentence, character){
   return sentence.split(' ').join(character + ' ');
 }
 
-export default MessageMixer;
+export {countCharacter,capitalizeFirstCharacterOfWords,reverseWord,reverseAllWords,replaceFirstOccurence,replaceAllOccurrences,encode,palindrome,pigLatin};
