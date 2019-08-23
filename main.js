@@ -53,3 +53,5 @@ MessageMixer.encode=function(string) {
     }
     return string;
 };
+
+module.exports = MessageMixer;
