@@ -1,7 +1,8 @@
 //declaring mm as a var set to an empty object is the first step in setting this entire file up as a module
-let messageMixer = {};
+//capitalize first M b/c object
+let MessageMixer = {};
 //refactor the functions as properties of the object mMix:
-messageMixer.countCharacter=function(inputString, inputCharacter) {
+MessageMixer.countCharacter=function(inputString, inputCharacter) {
   let count = 0;
   let string = inputString.toLowerCase();
   let character = inputCharacter.toLowerCase();
@@ -13,7 +14,7 @@ messageMixer.countCharacter=function(inputString, inputCharacter) {
   return count;
 };
 
-messageMixer.capitalizeFirstCharacterOfWords=function(string) {
+MessageMixer.capitalizeFirstCharacterOfWords=function(string) {
   let arr = string.split(" ");
     for (let i = 0; i < arr.length; i++) {
       let word = arr[i];
@@ -23,32 +24,32 @@ messageMixer.capitalizeFirstCharacterOfWords=function(string) {
 };
 
 
-messageMixer.reverseWord=function(word) {
+MessageMixer.reverseWord=function(word) {
   return word.split("").reverse().join("");
 };
 
-messageMixer.reverseAllWords=function(sentence) {
+MessageMixer.reverseAllWords=function(sentence) {
   let words = sentence.split(" ");
     for (let i = 0; i < words.length; i++) {
-      words[i] = messageMixer.reverseWord(words[i]);
+      words[i] = MessageMixer.reverseWord(words[i]);
     }
    return words.join(" ");
 };
 
 
-messageMixer.replaceFirstOccurence=function(string, toBeReplaced, replaceWith) {
+MessageMixer.replaceFirstOccurence=function(string, toBeReplaced, replaceWith) {
   return string.replace(toBeReplaced, replaceWith);
 };
 
 
-messageMixer.replaceAllOccurrences=function(string, toBeReplaced, replaceWith) {
+MessageMixer.replaceAllOccurrences=function(string, toBeReplaced, replaceWith) {
   return string.split(toBeReplaced).join(replaceWith);
 };
 
-messageMixer.encode=function(string) {
+MessageMixer.encode=function(string) {
   let replacementObject = { "a": "@", "s": "$", "i": "!", "o":"0" };
     for (let key in replacementObject) {
-      string = messageMixer.replaceAllOccurrences(string, key, replacementObject[key]);
+      string = MessageMixer.replaceAllOccurrences(string, key, replacementObject[key]);
     }
     return string;
 };
