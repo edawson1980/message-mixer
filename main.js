@@ -30,7 +30,7 @@ messageMixer.reverseWord=function(word) {
 messageMixer.reverseAllWords=function(sentence) {
   let words = sentence.split(" ");
     for (let i = 0; i < words.length; i++) {
-      words[i] = reverseWord(words[i]);
+      words[i] = messageMixer.reverseWord(words[i]);
     }
    return words.join(" ");
 };
@@ -48,7 +48,7 @@ messageMixer.replaceAllOccurrences=function(string, toBeReplaced, replaceWith) {
 messageMixer.encode=function(string) {
   let replacementObject = { "a": "@", "s": "$", "i": "!", "o":"0" };
     for (let key in replacementObject) {
-      string = replaceAllOccurrences(string, key, replacementObject[key]);
+      string = messageMixer.replaceAllOccurrences(string, key, replacementObject[key]);
     }
     return string;
 };
