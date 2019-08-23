@@ -2,7 +2,7 @@
 //capitalize first M b/c object
 let MessageMixer = {};
 //refactor the functions as properties of the object mMix:
-MessageMixer.countCharacter=function(inputString, inputCharacter) {
+const countCharacter=function(inputString, inputCharacter) {
   let count = 0;
   let string = inputString.toLowerCase();
   let character = inputCharacter.toLowerCase();
@@ -14,7 +14,7 @@ MessageMixer.countCharacter=function(inputString, inputCharacter) {
   return count;
 };
 
-MessageMixer.capitalizeFirstCharacterOfWords=function(string) {
+const capitalizeFirstCharacterOfWords=function(string) {
   let arr = string.split(" ");
     for (let i = 0; i < arr.length; i++) {
       let word = arr[i];
@@ -24,11 +24,11 @@ MessageMixer.capitalizeFirstCharacterOfWords=function(string) {
 };
 
 
-MessageMixer.reverseWord=function(word) {
+const reverseWord=function(word) {
   return word.split("").reverse().join("");
 };
 
-MessageMixer.reverseAllWords=function(sentence) {
+const reverseAllWords=function(sentence) {
   let words = sentence.split(" ");
     for (let i = 0; i < words.length; i++) {
       words[i] = MessageMixer.reverseWord(words[i]);
@@ -37,16 +37,16 @@ MessageMixer.reverseAllWords=function(sentence) {
 };
 
 
-MessageMixer.replaceFirstOccurence=function(string, toBeReplaced, replaceWith) {
+const replaceFirstOccurence=function(string, toBeReplaced, replaceWith) {
   return string.replace(toBeReplaced, replaceWith);
 };
 
 
-MessageMixer.replaceAllOccurrences=function(string, toBeReplaced, replaceWith) {
+const replaceAllOccurrences=function(string, toBeReplaced, replaceWith) {
   return string.split(toBeReplaced).join(replaceWith);
 };
 
-MessageMixer.encode=function(string) {
+const encode=function(string) {
   let replacementObject = { "a": "@", "s": "$", "i": "!", "o":"0" };
     for (let key in replacementObject) {
       string = MessageMixer.replaceAllOccurrences(string, key, replacementObject[key]);
@@ -54,11 +54,11 @@ MessageMixer.encode=function(string) {
     return string;
 };
 
-MessageMixer.palindrome = function(str){
+const palindrome = function(str){
   return str + ' ' + MessageMixer.reverseWord(str);
 };
 
-MessageMixer.pigLatin = function(sentence, character){
+const pigLatin = function(sentence, character){
   return sentence.split(' ').join(character + ' ');
 }
 
