@@ -1,7 +1,7 @@
 //declaring mm as a var set to an empty object is the first step in setting this entire file up as a module
 let messageMixer = {};
-
-function countCharacter(inputString, inputCharacter) {
+//refactor the functions as properties of the object mMix:
+messageMixer.countCharacter=function(inputString, inputCharacter) {
   let count = 0;
   let string = inputString.toLowerCase();
   let character = inputCharacter.toLowerCase();
@@ -13,7 +13,7 @@ function countCharacter(inputString, inputCharacter) {
   return count;
 };
 
-function capitalizeFirstCharacterOfWords(string) {
+messageMixer.capitalizeFirstCharacterOfWords=function(string) {
   let arr = string.split(" ");
     for (let i = 0; i < arr.length; i++) {
       let word = arr[i];
@@ -23,11 +23,11 @@ function capitalizeFirstCharacterOfWords(string) {
 };
 
 
-function reverseWord(word) {
+messageMixer.reverseWord=function(word) {
   return word.split("").reverse().join("");
 };
 
-function reverseAllWords(sentence) {
+messageMixer.reverseAllWords=function(sentence) {
   let words = sentence.split(" ");
     for (let i = 0; i < words.length; i++) {
       words[i] = reverseWord(words[i]);
@@ -36,16 +36,16 @@ function reverseAllWords(sentence) {
 };
 
 
-function replaceFirstOccurence(string, toBeReplaced, replaceWith) {
+messageMixer.replaceFirstOccurence=function(string, toBeReplaced, replaceWith) {
   return string.replace(toBeReplaced, replaceWith);
 };
 
 
-function replaceAllOccurrences(string, toBeReplaced, replaceWith) {
+messageMixer.replaceAllOccurrences=function(string, toBeReplaced, replaceWith) {
   return string.split(toBeReplaced).join(replaceWith);
 };
 
-function encode(string) {
+messageMixer.encode=function(string) {
   let replacementObject = { "a": "@", "s": "$", "i": "!", "o":"0" };
     for (let key in replacementObject) {
       string = replaceAllOccurrences(string, key, replacementObject[key]);
