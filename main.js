@@ -1,3 +1,6 @@
+//declaring mm as a var set to an empty object is the first step in setting this entire file up as a module
+let messageMixer = {};
+
 function countCharacter(inputString, inputCharacter) {
   let count = 0;
   let string = inputString.toLowerCase();
